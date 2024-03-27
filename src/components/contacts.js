@@ -7,7 +7,9 @@ function Contacts() {
   const fetchData = async () => {
     const data = await fetch(url);
     const dataJson = await data.json();
-
+    console.log(dataJson);
+    console.log("aaaaa");
+ 
     setContacts(dataJson);
   };
 
@@ -15,13 +17,16 @@ function Contacts() {
     fetchData();
   }, []);
 
-  contacts.map((contact) => {
-    return (
-      <div>
-        <Card contact={contact} />
-      </div>
-    );
-  });
+  return ( 
+  <div>
+    {contacts.map((contact) => (
+        <div>
+          <Card data={contact} />
+        </div>
+  ))}
+  
+
+  </div>);
 }
 
 export default Contacts;
