@@ -36,12 +36,12 @@
     transform: rotate(360deg);
   }
 }
-@media (max-width: 768px){
-  .card{
+@media (max-width: 768px) {
+  .card {
     max-width: 100%;
   }
-  .contacts{
+  .contacts {
     flex-direction: column;
-    align-items:center;
+    align-items: center;
   }
 }

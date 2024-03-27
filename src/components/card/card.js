@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import './card.styles.scss';
 import Modal from 'react-modal';
 
@@ -13,14 +13,13 @@ const customStyles = {
   },
 };
 
-function Card({contact}) {
-
+function Card({ contact }) {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
-  const openModal =() => {
-    console.log("enterred!!!!!!");
+  const openModal = () => {
+    console.log('enterred!!!!!!');
     setIsOpen(true);
-  }
+  };
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
@@ -33,13 +32,13 @@ function Card({contact}) {
   Modal.setAppElement('#root');
 
   <Modal
-  isOpen={modalIsOpen}
-  onAfterOpen={afterOpenModal}
-  onRequestClose={closeModal}
-  style={customStyles}
-  contentLabel="Example Modal"
->
-<div className="card">
+    isOpen={modalIsOpen}
+    onAfterOpen={afterOpenModal}
+    onRequestClose={closeModal}
+    style={customStyles}
+    contentLabel="Example Modal"
+  >
+    <div className="card">
       {/* <img className="image" src={contact.profile_image} alt=""></img>
       <span className="name">{contact.name}</span>
       <div>{contact.job}| @{contact.company_name} </div>
@@ -47,21 +46,25 @@ function Card({contact}) {
         <div>Phone Number {contact.phone}</div>
         <div>{contact.email}</div>
       </div> */}
-
     </div>
-
-</Modal>
+  </Modal>;
 
   return (
-    <div className="card" onClick={()=>{openModal()}}>
+    <div
+      className="card"
+      onClick={() => {
+        openModal();
+      }}
+    >
       <img className="image" src={contact.profile_image} alt=""></img>
       <span className="name">{contact.name}</span>
-      <div>{contact.job}| @{contact.company_name} </div>
+      <div>
+        {contact.job}| @{contact.company_name}{' '}
+      </div>
       <div className="more-details">
         <div>Phone Number {contact.phone}</div>
         <div>{contact.email}</div>
       </div>
-
     </div>
   );
 }
