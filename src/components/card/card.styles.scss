@@ -7,15 +7,24 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin: 1em;
     padding: 1em;
-    width: 250px; 
+    width: 275px; 
     box-sizing: border-box;
     height: 100%;
-  }
 
-  .image {
-    width: 100%; 
-    height: auto;
-    border-radius: 50%;
-    border: 2px solid #ddd;
-    margin-bottom: 1em;
+    .more-details{
+        visibility:hidden;
+    }
+    .image {
+        width: 100%; 
+        height: auto;
+        border-radius: 50%;
+        border: 2px solid #ddd;
+        margin-bottom: 1em;
+    }
   }
+  .card:hover .more-details{
+    visibility:visible;
+    padding: 0 10px;
+}
+
+
