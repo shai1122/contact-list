@@ -16,7 +16,7 @@ function Contacts() {
       const data = await fetch(url);
       const dataJson = await data.json();
       const filteredData = dataJson.filter(item => {
-        return item.name.includes(searchValue);
+        return item.name.toLowerCase().includes(searchValue.toLowerCase());
       });
       setContacts(filteredData);
 
